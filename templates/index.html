@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} ASK ME ? {% endblock %}
+{% block body %}
+
+<div class="container" xmlns="http://www.w3.org/1999/html">
+                 {% for quests in quests %}
+                    <div class="card mb=3">
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="/detail/{{quests.id}}"> {{quests.title}}</a></h4>
+                            <p class="card-text">{{quests.detail}}</p>
+                            <p>
+                                <a href="#" class="mr-3">{{quests.user.username}}</a>
+                            </p>
+
+                        </div>
+                    </div>
+                 {% endfor %}
+             </div>
+
+
+{% endblock %}

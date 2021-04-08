@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block head %} {% endblock %}
+{% block title %} ASK ME ? {% endblock %}
+{% block body %}
+<div class="section-warp top-after-header" style="background-image:url(https://2code.info/demo/themes/ask-me/wp-content/uploads/2014/06/desk_background.png);background-repeat:no-repeat;background-attachment:fixed;background-position-x:left;background-position-y:top;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;"><div class="container clearfix"><div class="box_icon box_warp box_no_border box_no_background"><div class="row"><div class="col-md-3"><h2>Welcome to Ask me</h2><p>Ask me provides you a platform to put your doubt and query infront of others. Other people who feel that they have solution can answer the question put up by you.  </p><div class="clearfix"></div> <a class="btn btn-warning" href="accounts/login" role="button">JOIN US</a> <a class="btn btn-warning" href="askme" role="button">ASK</a></div></div></div></div></div>
+<div class="container mb-6 py-3 text-center">
+{% if not user.is_authenticated%}
+    <h2> Login to continue</h2>
+    <a class="btn btn-warning" href="accounts/login" role="button">LOGIN</a>
+    </div>
+    </div>
+{% endif %}
+
+{% endblock %}

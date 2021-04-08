@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %} {% endblock %}
+{% block title %} Ask mE {% endblock %}
+{% block body %}
+<div class="container">
+    <h2>Ques-{{quest.title}}</h2>
+    <p>
+        <span>{{quest.add_time}}</span>
+        <a href='#'>{{quest.user.username}}</a>
+    </p>
+</div>
+{% for ans in ans %}
+    <div class="col-11">
+        <p>
+        Ans by {{answer.user.username}} - {{answer.detail}}
+        </p>
+        <p>
+        {{answer.add_time}}
+        </p>
+    </div>  
+{%endfor%}
+<h4>submit ur answer</h4>
+<form method="post">
+    {%csrf_token%}
+    <table class='table table-bordered'>
+        {{answerform.as_table}}
+        <Input type="submit" class="btn btn-dark"/>
+    </table>
+</form>
+
+{% endblock %}

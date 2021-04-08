@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} ASK ME ? {% endblock %}
+{% block body %}
+<h4>Enter your Question here</h4>
+<form method="post">
+    {%csrf_token%}
+    <table class='table table-bordered'>
+        {{questionform.as_table}}
+        <Input type="submit" class="btn btn-dark"/>
+    </table>
+</form>
+ {% endblock %}

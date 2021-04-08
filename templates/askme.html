@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} ASK ME ? {% endblock %}
+{% block body %}
+<h1>Ask mE</h1>
+<div class="content">
+{% for question in questions %}
+    <div class="question">
+        <a href="/question/{{ question.qid }}/{{ question.slug }}"><h1>{{ question.question_title }}</h1></a>
+        <p>{{ question.question_text|truncatechars:300|slice:"-4" }}...</p>
+    </div>
+{% endfor %}
+{% endblock %}
